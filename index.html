@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mockup Design</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <style>
+        @font-face {
+            font-family: 'DIN';
+            src: url('https://fonts.cdnfonts.com/s/90127/DIN.woff') format('woff');
+        }
+        body {
+            font-family: 'DIN', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #fff;
+        }
+        .container {
+            max-width: 900px;
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+        }
+        .carousel-container {
+            position: relative;
+            width: 350px;
+            height: 400px;
+        }
+        .carousel img {
+            width: 100%;
+            height: auto;
+            display: none;
+        }
+        .carousel img.active {
+            display: block;
+        }
+        .text-content {
+            margin-left: 40px;
+            max-width: 450px;
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .text-content a {
+            color: #ff0077;
+            text-decoration: none;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        .active {
+            color: #ff0077;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#" class="active">HOMEDRESSING</a>
+        <a href="#">PORTFOLIO</a>
+        <a href="#">KONTAKT</a>
+        <a href="#">BLOG</a>
+    </nav>
+    <div class="container">
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="./images/home1.png" class="active" alt="Image 1">
+                <img src="/images/home2.png" alt="Image 2">
+            </div>
+        </div>
+        <div class="text-content">
+            <p>
+                Úspěšný design se skládá z několika složek: design na míru plus širokodostupný nábytek, zpestřený ikonickými kousky ze světa a osobitými nebo starožitnými detaily.
+            </p>
+            <p>
+                K práci s prostorem přistupuji velice individuálně, ráda řeším zařizování na míru, aby Váš interiér vynikl co nejlépe.
+            </p>
+            <p>
+                Pro inspiraci shlédněte moje <a href="#">portfolio</a>.
+            </p>
+        </div>
+    </div>
+    <script>
+        let currentIndex = 0;
+        const images = document.querySelectorAll('.carousel img');
+        
+        function showNextImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+        
+        setInterval(showNextImage, 3000);
+    </script>
+</body>
+</html>
+
