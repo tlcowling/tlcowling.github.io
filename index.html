@@ -8,7 +8,7 @@
     <style>
         @font-face {
             font-family: 'DIN';
-            src: url('https://fonts.cdnfonts.com/s/90127/DIN.woff') format('woff');
+            src: url('/fonts/din-next-w02-light.woff2') format('woff2');
         }
         body {
             font-family: 'DIN', sans-serif;
@@ -21,7 +21,7 @@
             background: #fff;
         }
         nav {
-            width: 100%;
+            width: 900px;
             display: flex;
             justify-content: center;
             gap: 40px;
@@ -36,6 +36,9 @@
             font-weight: bold;
             position: relative;
             padding-bottom: 5px;
+        }
+	nav a.active {
+            color: #b30045;
         }
         nav a:hover {
             color: #b30045;
@@ -72,6 +75,8 @@
             opacity: 0;
             position: absolute;
             transition: opacity 1s ease-in-out;
+            filter: drop-shadow(0px 10px 10px rgba(0, 0, 0, 0.2));
+            border-radius: 5px;
         }
         .carousel img.active {
             opacity: 1;
@@ -92,8 +97,8 @@
 </head>
 <body>
     <nav>
-        <a href="#" class="active">HOMEDRESSING</a>
-        <a href="#">PORTFOLIO</a>
+        <a href="/" class="active">HOMEDRESSING</a>
+        <a href="/portfolio.html">PORTFOLIO</a>
         <a href="#">KONTAKT</a>
         <a href="#">BLOG</a>
     </nav>
@@ -106,13 +111,16 @@
         </div>
         <div class="text-content">
             <p>
-                Úspěšný design se skládá z několika složek: design na míru plus širokodostupný nábytek, zpestřený ikonickými kousky ze světa a osobitými nebo starožitnými detaily.
+               Úspěšný design se skládá z několika složek: design na míru plus širokodostupný nábytek, zpestřený ikonickými kousky ze světa a osobitými nebo starožitnými detaily. Využívám všech těch prostředků pro dosažení interiéru originálního, stylového, ale zároveň útulného a osobitého.
             </p>
             <p>
-                K práci s prostorem přistupuji velice individuálně, ráda řeším zařizování na míru, aby Váš interiér vynikl co nejlépe.
+		K práci z prostorem přistupuji velice individuálně, ráda řeším zařizování na míru, aby Váš interiér vyzněl co nejlépé, aby se tam dobře bydlelo a vyhovovalo to Vaším individuálním nárokům.
             </p>
+	    <p>
+	    Zabývám se designem soukromého bydleni, dělám návrhy i projektovou činnost pro komplexní rekonstrukce. Zvlaštní složkou mých praci je také staging bytů k pronájmů, kde je efektního výsledku dosaženo za podmínek omezeného rozpočtu.
+	    </p>
             <p>
-                Pro inspiraci shlédněte moje <a href="#">portfolio</a>.
+                Pro inspiraci shlédněte moje <a href="/portfolio.html">portfolio</a>.
             </p>
         </div>
     </div>
