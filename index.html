@@ -15,29 +15,67 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             min-height: 100vh;
             background: #fff;
+        }
+        nav {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 14px;
+            padding: 20px 0;
+            position: relative;
+            border-bottom: 2px solid #ddd;
+        }
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            position: relative;
+            padding-bottom: 5px;
+        }
+        nav a:hover {
+            color: #b30045;
+        }
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #333;
+            visibility: hidden;
+        }
+        nav a:hover::before {
+            visibility: visible;
         }
         .container {
             max-width: 900px;
             display: flex;
             flex-direction: row;
             align-items: flex-start;
+            margin-top: 40px;
         }
         .carousel-container {
             position: relative;
             width: 350px;
             height: 400px;
+            overflow: hidden;
         }
         .carousel img {
             width: 100%;
             height: auto;
-            display: none;
+            opacity: 0;
+            position: absolute;
+            transition: opacity 1s ease-in-out;
         }
         .carousel img.active {
-            display: block;
+            opacity: 1;
+            position: relative;
         }
         .text-content {
             margin-left: 40px;
@@ -49,23 +87,6 @@
         .text-content a {
             color: #ff0077;
             text-decoration: none;
-        }
-        nav {
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-        }
-        nav a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-        }
-        .active {
-            color: #ff0077;
         }
     </style>
 </head>
@@ -79,8 +100,8 @@
     <div class="container">
         <div class="carousel-container">
             <div class="carousel">
-                <img src="./images/home1.png" class="active" alt="Image 1">
-                <img src="/images/home2.png" alt="Image 2">
+                <img src="/images/image1.png" class="active" alt="Image 1">
+                <img src="/images/image2.png" alt="Image 2">
             </div>
         </div>
         <div class="text-content">
